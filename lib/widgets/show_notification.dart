@@ -6,9 +6,14 @@ class ShowNotification {
       required String message,
       required bool isSuccess,
       Duration duration = const Duration(seconds: 2)}) {
+    /// Выполняет поиск в дереве виджетов и находит текущий Overlay,
+    /// связанный с данным BuildContext
+    /// Вовзращает OverlayState, который с легкостью позволяет добавлять
+    /// OverlayEntry,
     final overlay = Overlay.of(context);
     if (overlay == null) return;
 
+    /// Создаем новое наложение
     final overlayEntry = OverlayEntry(
         builder: (context) => Positioned(
             bottom: 20,
@@ -17,10 +22,10 @@ class ShowNotification {
                 color: Colors.transparent,
                 child: _Notification(isSuccess: isSuccess, message: message))));
 
-    // Вставляем OverlayEntry в наш Overlay
+    /// Вставляем наложение OverlayEntry в наш Overlay
     overlay.insert(overlayEntry);
 
-    // Удаляем слои OverlayEntry c экрана
+    /// Удаляем слои OverlayEntry c экрана спустя 2 сек
     Future.delayed(Duration(seconds: 2), () {
       overlayEntry.remove();
     });

@@ -4,6 +4,8 @@ import '../models/word_card.dart';
 import 'delete_card_btn.dart';
 
 class CardBlock extends StatelessWidget {
+  // TODO:
+  // 1. Create GestureDetector onLongTap (edit card menu), onTap (overlay btn openmenu), onDoubleTap (edit card menu)
   final WordCard card;
   final VoidCallback onDelete;
   final TextStyle style = TextStyle(fontSize: 20);

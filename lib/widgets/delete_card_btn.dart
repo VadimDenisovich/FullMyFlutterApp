@@ -8,18 +8,19 @@ class DeleteButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-        onTap: onTap,
-        borderRadius: BorderRadius.circular(4),
-        child: Container(
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8),
-                border: Border.all(
-                  color: const Color.fromARGB(255, 201, 29, 17),
-                  width: 1.5,
-                )),
-            child: Padding(
-              padding: const EdgeInsets.all(4),
-              child: Icon(Icons.delete, color: Color.fromARGB(255, 181, 9, 9)),
-            )));
+      onTap: onTap,
+      borderRadius: BorderRadius.circular(4),
+      child: Container(
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(8),
+              border: Border.all(
+                color: const Color.fromARGB(255, 201, 29, 17),
+                width: 1.5,
+              )),
+          child: Padding(
+            padding: const EdgeInsets.all(4),
+            child: Icon(Icons.delete, color: Color.fromARGB(255, 181, 9, 9)),
+          )),
+    );
   }
 }

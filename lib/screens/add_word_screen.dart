@@ -12,7 +12,6 @@ class _AddWordState extends State<AddWord> {
   // TODO:
   // 1. create blue outline for TextFields
   // 2. ElevatedButton: text to white, background to blue
-  // 3. Create two notifications: when success and not
   final TextEditingController _firstController = TextEditingController();
   final TextEditingController _secondController = TextEditingController();
 
@@ -34,6 +33,7 @@ class _AddWordState extends State<AddWord> {
         height: 50,
         child: TextField(
           controller: controller,
+          obscureText: true, // добавляет ввод, как у пароля
           decoration:
               InputDecoration(labelText: hint, border: OutlineInputBorder()),
         ));
